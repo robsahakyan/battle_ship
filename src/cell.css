@@ -1,0 +1,40 @@
+.opponentsCell {
+    width: 2.7rem;
+    height: 2.7rem;
+    outline: 0.1rem #4695f1 solid;
+}
+.myCell {
+    width: 2.7rem;
+    height: 2.7rem;
+    outline: 0.1rem #4695f1 solid;
+}
+.myCell:disabled {
+    background-color: rgb(239, 239, 239);
+    color: black;
+    border-color: rgb(118, 118, 118);
+    border: #4695f1;
+}
+.fired {
+    width: 2.7rem;
+    height: 2.7rem;
+    outline: 0.1rem #4695f1 solid;
+    background-color: black;
+}
+.firedMyShip, .firedShip {
+    width: 2.7rem;
+    height: 2.7rem;
+    outline: 0.1rem #4695f1 solid;
+    background-color: rgb(183, 21, 21);
+    color: black;
+    border-color: rgb(118, 118, 118);
+    border: #4695f1;
+}
+.unFiredShip {
+    width: 2.7rem;
+    height: 2.7rem;
+    outline: 0.1rem #4695f1 solid;
+    background-color: cadetblue;
+    color: black;
+    border-color: rgb(118, 118, 118);
+    border: #4695f1;
+}

@@ -1,0 +1,102 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    justify-content: space-around;
+}
+.headerPart {
+    width: 100rem;
+    display: flex;
+    justify-content: space-around;
+    align-self: center;
+    font-size: 4rem;
+}
+.sectionPart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.whoseGrid {
+    text-align: center;
+    width: 33rem;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.usersGrid, .opponentsGrid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 0.1rem #4695f1 solid;
+    width: 27rem;
+    height: 27rem;
+}
+.gridAndNums {
+    display: flex;
+    flex-direction: row;
+}
+.nums {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.5rem;
+    margin-top: 0.2rem;
+    height: 30rem;
+    text-align: center;
+    gap: 1.4rem;
+}
+.letterParts {
+    display: flex;
+    flex-direction: row;
+    width: 30rem;
+    margin-left: 2.8rem;
+    letter-spacing: 2.15rem;
+}
+#overlayDiv , .overlay2{
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    transition: opacity 1s;
+}
+.wrapParent {
+    margin-top: 8rem;
+    width: 30rem;
+    height: 30rem;
+    border-radius: 2rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrapper {
+    margin-bottom: 4rem;
+    text-align-last: center;
+}
+.startButton {
+    width: 10rem;
+    height: 10rem;
+    border: unset;
+    border-radius: 100rem;
+    background: rgb(17, 170, 55);
+    cursor: pointer;
+    font-size: 5rem;
+    transition: 1s;
+}
+.overlay2 {
+    display: none;
+}
+.wrapper2 {
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 15rem;
+}
+.startButton:hover {
+    background-color: aquamarine;
+}
+h1 {
+    color: azure;
+
+}
