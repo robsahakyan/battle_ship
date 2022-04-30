@@ -7,6 +7,7 @@ import { MyGridArea } from './myGridArea';
 import { OpponentsGridArea } from './opponentsGridArea';
 import { setMyFiredShipsAC, setOccupiedPositionsAC, setShipsAC, toShootAC } from './reducer1';
 import { setOpponentsFiredShipsAC, setOpponentsOccupiedPositionsAC, setOpponentsShipsAC, toShootOpponentAC } from './reducer2';
+import store from './store';
 
 function App(props) {
   let rowLetters = ["A","B","C","D","E","F","G","H","I","J"];
@@ -35,6 +36,24 @@ function App(props) {
     }
   },[props.opponentsFiredShips,props.myFiredShips])
   
+  const startSavedGame = () => {
+    console.log(window.localStorage)
+    if (JSON.parse(window.localStorage.getItem("persistantState")) === null) {
+        setShips();
+    } else {
+      let startGame = window.confirm("Do you want to continue the saved game?");
+        if(startGame) {
+          overlayDiv.current.style.display = "none";
+        } else {
+          window.localStorage.removeItem("persistantState");
+          window.location.reload(false);
+          if (JSON.parse(window.localStorage.getItem("persistantState")) === null) {
+            setShips();
+            
+        }
+        }
+    }
+  }
   const setShips = () => {
     overlayDiv.current.style.display = "none";
     let shipsCount = 9;
@@ -57,10 +76,21 @@ function App(props) {
           })
     } 
   }
+  const exitHandler = () => {
+    let exit = window.confirm("Do you want to save current game?");
+    if(!exit) {
+      window.localStorage.removeItem("persistantState");
+    } else {
+      window.localStorage.setItem("persistantState",JSON.stringify(store.getState()));
+    }
+    window.location.reload(false);
+  }
   return (
     <div className="App">
       <div className="headerPart">
-         
+         <button onClick={exitHandler}>
+           EXIT
+         </button>
          
       </div>
       <div className="sectionPart">
@@ -134,7 +164,7 @@ function App(props) {
        <div className='wrapParent'>
           <div className="wrapper">
             <h1>START THE GAME</h1>
-            <button onClick={setShips} className="startButton">
+            <button onClick={startSavedGame} className="startButton">
             <VscDebugStart/> 
             </button>
           </div>
